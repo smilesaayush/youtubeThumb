@@ -1,0 +1,55 @@
+* {
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+}
+html, body {
+  height: 100%;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.per80 {
+  height: 80%;
+  width: 80%;
+}
+
+#toolbar {
+  opacity: 0.7;
+  cursor: move;
+  background-color: black;
+  display: "none";
+  -webkit-app-region: drag;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.action {
+  float: right;
+  height: 100%;
+  overflow: hidden;
+  -webkit-app-region: no-drag;
+}
+
+.action-button {
+  cursor: pointer;
+  float: right;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+}
+
+#player-container {
+  position: absolute;
+}
+
