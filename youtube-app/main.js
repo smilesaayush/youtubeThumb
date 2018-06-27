@@ -11,7 +11,15 @@ function getYoutubeEmbedUrl(url) {
   let indV = url.indexOf("v=");
   let indAmp = url.indexOf("&", indV);
   let videoId = indAmp > -1 ? url.substring(indV + 2, indAmp) : url.substring(indV + 2);
-  return `https://www.youtube.com/embed/${videoId}?showinfo=0&autoplay=1`;
+
+  let indList = url.indexOf("list=");
+  indAmp = url.indexOf("&", indList);
+  let listId = "";
+  if(indList > -1) {
+    listId = indAmp > -1 ? url.substring(indList + 5, indAmp) : url.substring(indList + 5);
+  }
+
+  return `https://www.youtube.com/embed/${videoId}?showinfo=0&autoplay=1&fs=0&modestbranding=1&list=${listId}`;
 }
 
 const playerContainer = document.getElementById("player-container");
@@ -24,7 +32,6 @@ toolbar.style.display = "none";
 
 let hideToolbarTimeout = null;
 playerContainer.addEventListener('mouseover', function() {
-  console.log('here');
   toolbar.style.display = "block";
   clearTimeout(hideToolbarTimeout);
   hideToolbarTimeout = setTimeout(function() {

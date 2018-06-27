@@ -22,9 +22,9 @@ html, body {
 }
 
 #toolbar {
-  opacity: 0.7;
+  opacity: 1;
   cursor: move;
-  background-color: black;
+  background-color: rgba(0,0,0,0.7);
   display: "none";
   -webkit-app-region: drag;
   height: 30px;

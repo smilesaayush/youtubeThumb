@@ -27,8 +27,7 @@ async function startPlayer(url) {
   playerWindow.show();
   setTimeout(function() {
     chrome.runtime.sendMessage({url});
-  },0);
-  
+  },10);
 }
 
 function createPlayerWindow() {
